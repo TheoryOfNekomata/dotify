@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   playlist.associate = function(models) {
     playlist.belongsTo(models.user, { foreignKey: 'creatorId', })
-    playlist.hasMany(models.track)
+    playlist.belongsToMany(models.track, { through: 'playlistTracks', })
   };
   return playlist;
 };
