@@ -13,7 +13,7 @@ app.use(cookieParser());
 
 app.use('/api', apiRouter);
 
-app.use((err, req, res, next) => {
+app.use((err, req, res) => {
   res
     .status(500)
     .send('Bruh!')

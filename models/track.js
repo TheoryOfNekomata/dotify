@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   track.associate = function(models) {
     track.belongsTo(models.album)
-    track.belongsToMany(models.playlist)
+    track.belongsToMany(models.playlist, { through: 'playlistTracks', })
   };
   return track;
 };
